@@ -5,7 +5,7 @@ weight is free source code, under the MIT license (see LICENSE). You can redistr
 Please give feedback to the authors if improvement is realized. It is distributed in the hope that it will be useful.
 
 weight computes the 'weight' of the sequence k * 2^n + 1 for a range of k's.
-See http://yves.gallot.pagesperso-orange.fr/papers/weight.pdf.
+See Yves Gallot, On the number of primes in a sequence (doc/weight.pdf).
 */
 
 #include <cstdint>
@@ -16,14 +16,7 @@ See http://yves.gallot.pagesperso-orange.fr/papers/weight.pdf.
 #include <iomanip>
 #include <fstream>
 
-inline bool isprime(const uint32_t n)
-{
-	if (n % 2 == 0) return (n == 2);
-	if (n < 9) return true;
-	const uint32_t s = uint32_t(sqrt(double(n))) + 1;
-	for (uint32_t d = 3; d <= s; d += 2) if (n % d == 0) return false;
-	return true;
-}
+#include "prm.h"
 
 class Weight
 {
@@ -42,12 +35,9 @@ private:
 public:
 	Weight(const uint32_t p_max, const uint32_t n_max) : s_max(n_max), C0(exp(0.577215664) * log(p_max) / double(n_max))
 	{
-		// Number number;
-		for (uint32_t p = 3; p <= p_max; p += 2)
+		PrmGen prm; prm.first();
+		for (uint32_t p = prm.next(); p <= p_max; p = prm.next())
 		{
-			if (!isprime(p)) continue;
-			// std::cout << p << std::endl;
-
 			Pos pos; pos.p = p; pos.s = new uint32_t[p];
 			for (size_t k = 0; k < p; ++k) pos.s[k] = uint32_t(-1);
 
