@@ -49,7 +49,7 @@ main()=
 
 	w = weight(k, b, c, N_0, P_0);
 
-	printf("%d*%d^n + %d: N_0 = %d, P_0 = %d, weight = %.8f.\n", k, b, c, N_0, P_0, w);
+	printf("%d*%d^n + %d: N_0 = %d, P_0 = %d, weight = %.8f, %.4f primes/decade.\n", k, b, c, N_0, P_0, w, w * log(10) / log(2));
 }
 
 main()
