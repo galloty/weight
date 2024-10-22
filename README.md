@@ -3,7 +3,7 @@ Compute the weight of a sequence of primes of the form *k*&nbsp;&middot;&nbsp;*b
 
 ## About
 
-Let *k*, *b*, *a* be positive integers. We search for an estimate of the number of primes in the sequence of numbers of the form *P*(*n*) = *k*&nbsp;&middot;&nbsp;*b*<sup>*n*</sup>&nbsp;+&nbsp;*a* for 1 &le; *n* &le; *N*. It is expected to be *C*(*k*,&nbsp;*b*,&nbsp;*a*) &middot; Sum<sub>1&nbsp;&le;&nbsp;*n*&nbsp;&le;&nbsp;*N*</sub> 1&nbsp;/&nbsp;log&nbsp;*P*(*n*).  
+Let *k*&nbsp;&ge;&nbsp;1, *b*&nbsp;&ge;&nbsp;2 and *a*&nbsp;&ne;&nbsp;0 be integers. We search for an estimate of the number of primes in the sequence of numbers of the form *P*(*n*) = *k*&nbsp;&middot;&nbsp;*b*<sup>*n*</sup>&nbsp;+&nbsp;*a* for 1 &le; *n* &le; *N*. It is expected to be *C*(*k*,&nbsp;*b*,&nbsp;*a*) &middot; Sum<sub>1&nbsp;&le;&nbsp;*n*&nbsp;&le;&nbsp;*N*</sub> 1&nbsp;/&nbsp;log&nbsp;*P*(*n*).  
 
 **weight** computes an approximation of the constant *C*(*k*,&nbsp;*b*,&nbsp;*a*).  
 
