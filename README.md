@@ -1,16 +1,14 @@
 # weight
-Compute the weight of Proth numbers
+Compute the weight of a sequence of primes of the form *k*&nbsp;&middot;&nbsp;*b*<sup>*n*</sup>&nbsp;+&nbsp;*a*
 
 ## About
 
-Let *k* be an odd positive integer. We search for an estimate of the number of primes in the sequence of numbers of the form *P*(*k*, *n*) = *k*&nbsp;&middot;&nbsp;2<sup>*n*</sup>&nbsp;+&nbsp;1 for 1 &le; *n* &le; *N*. It is expected to be *C*<sub>*k*</sub> Sum<sub>1&nbsp;&le;&nbsp;*n*&nbsp;&le;&nbsp;*N*</sub> 1&nbsp;/&nbsp;log&nbsp;*P*(*k*,&nbsp;*n*).  
+Let *k*, *b*, *a* be positive integers. We search for an estimate of the number of primes in the sequence of numbers of the form *P*(*n*) = *k*&nbsp;&middot;&nbsp;*b*<sup>*n*</sup>&nbsp;+&nbsp;*a* for 1 &le; *n* &le; *N*. It is expected to be *C*(*k*,&nbsp;*b*,&nbsp;*a*) &middot; Sum<sub>1&nbsp;&le;&nbsp;*n*&nbsp;&le;&nbsp;*N*</sub> 1&nbsp;/&nbsp;log&nbsp;*P*(*n*).  
 
-**weight** computes an approximation of *C*<sub>*k*</sub> and is optimized for a large range of *k*.  
+**weight** computes an approximation of the constant *C*(*k*,&nbsp;*b*,&nbsp;*a*).  
 
-**weight_gen** computes an approximation of the weight for *P*(*k*,&nbsp;*b*,&nbsp;*a*,&nbsp;*n*) = *k*&nbsp;&middot;&nbsp;*b*<sup>*n*</sup>&nbsp;+&nbsp;*a*. It is optimized for a single triplet (*k*,&nbsp;*b*,&nbsp;*a*).  
+It is a PARI/GP program. It can be executed in [Run PARI/GP in your browser](https://pari.math.u-bordeaux.fr/gpwasm.html) if *N*<sub>0</sub> and *P*<sub>0</sub> are not too large (for instance, *N*<sub>0</sub> = *P*<sub>0</sub> = 400,000).
 
-See Yves Gallot, [On the number of primes in a sequence](https://github.com/galloty/weight/tree/main/doc/weight.pdf) for more details and the definition of p_max (*P*<sub>0</sub>) and n_max (*N*<sub>0</sub>).
 
-## Build
 
-This version is compiled with gcc.
+See Yves Gallot, [On the number of primes in a sequence](https://github.com/galloty/weight/tree/main/doc/weight.pdf) for more details and the definition of *N*<sub>0</sub> and *P*<sub>0</sub>.
